@@ -160,6 +160,28 @@ body {
   background: linear-gradient(to right, transparent, rgba(148,163,184,0.3), transparent);
 }
 
+.theme-light {
+  background: #f4f6f8;
+  color: #12161c;
+}
+
+.theme-light .back-home {
+  color: #374151;
+}
+
+.theme-light .subtitle {
+  color: #6b7280;
+}
+
+.theme-light .cert-card {
+  background: #fff;
+  border-color: rgba(100,116,139,0.25);
+}
+
+.theme-light .footer {
+  color: #6b7280;
+}
+
 .img-modal {
   position: fixed;
   inset: 0;
@@ -183,21 +205,6 @@ body {
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35);
 }
 
-.img-modal-close {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 38px;
-  height: 38px;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(17, 24, 39, 0.9);
-  color: #fff;
-  font-size: 20px;
-  line-height: 1;
-  cursor: pointer;
-}
-
 @keyframes card-reveal {
   from {
     opacity: 0;
@@ -209,6 +216,79 @@ body {
   }
 }
 
+@media (max-width: 575.98px) {
+  .title {
+    font-size: clamp(24px, 7vw, 36px);
+  }
+
+  .subtitle {
+    font-size: clamp(13px, 3.5vw, 15px);
+  }
+
+  .back-home {
+    font-size: clamp(13px, 3.5vw, 15px);
+    gap: 4px;
+  }
+
+  .cert-card {
+    padding: 1rem;
+  }
+
+  .cert-img {
+    height: clamp(200px, 50vw, 300px);
+    margin-bottom: 10px;
+  }
+
+  .cert-title {
+    font-size: clamp(13px, 3.5vw, 15px);
+  }
+
+  .cert-meta {
+    font-size: clamp(11px, 3vw, 13px);
+  }
+
+  .page-wrap {
+    max-width: 100%;
+    padding: 0 0.75rem;
+  }
+
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .header-bar {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .title {
+    font-size: clamp(20px, 6vw, 24px);
+  }
+
+  .back-home {
+    font-size: clamp(12px, 3vw, 14px);
+  }
+
+  .cert-card {
+    padding: 0.75rem;
+  }
+
+  .cert-img {
+    height: clamp(160px, 45vw, 220px);
+    margin-bottom: 8px;
+  }
+
+  .cert-title {
+    font-size: clamp(12px, 3vw, 14px);
+  }
+
+  .cert-meta {
+    font-size: clamp(10px, 2.8vw, 12px);
+  }
+}
+
 </style>
 </head>
 
@@ -216,15 +296,17 @@ body {
 
 <div class="container page-wrap py-5">
 
-  <a href="index.html" class="back-home mb-4 d-inline-block">
-    <i class="bi bi-arrow-left"></i>
-    Back to Home
-  </a>
+  <div class="header-bar mb-4">
+    <a href="index.html" class="back-home">
+      <i class="bi bi-arrow-left"></i>
+      Back to Home
+    </a>
+  </div>
 
   <div class="mb-4">
     <div class="title">Certifications</div>
     <div class="subtitle">
-      Professional credentials and training in Data Analysis, Python, SQL, AI, Prompt Engineering, and IT Resilience.
+      Here are my certifications, reflecting continuous learning and professional growth.
     </div>
   </div>
 
@@ -238,7 +320,6 @@ body {
 </div>
 
 <div class="img-modal" id="imgModal">
-  <button class="img-modal-close" id="imgModalClose" type="button" aria-label="Close preview">&times;</button>
   <img id="imgModalContent" class="img-modal-content" src="" alt="Certificate preview">
 </div>
 
@@ -246,6 +327,12 @@ body {
 
 /* ===== my certificates ===== */
 const certs = [
+  {
+    title: "Technical Support Fundamentals",
+    org: "Coursera - Google",
+    year: "2026",
+    img: "assets/certificates/technical-support-fundamentals.png"
+  },
   {
     title: "Web Development using PHP and MySQL",
     org: "Department of Information Communication Technology",
@@ -288,7 +375,6 @@ certs.forEach(cert => {
 
 const imgModal = document.getElementById("imgModal");
 const imgModalContent = document.getElementById("imgModalContent");
-const imgModalClose = document.getElementById("imgModalClose");
 
 document.addEventListener("click", (event) => {
   const trigger = event.target.closest(".cert-img-link");
@@ -300,7 +386,7 @@ document.addEventListener("click", (event) => {
     return;
   }
 
-  if (event.target === imgModal || event.target === imgModalClose) {
+  if (event.target === imgModal) {
     imgModal.classList.remove("show");
     imgModalContent.src = "";
   }

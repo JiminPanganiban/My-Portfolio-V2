@@ -144,6 +144,11 @@ body {
 .theme-dark .chip {
   background: #1f2933;
   border-color: rgba(148,163,184,0.2);
+  color: #e5e7eb;
+}
+
+.theme-dark .chip:hover {
+  background: #2d3748;
 }
 
 .theme-dark .subtitle {
@@ -162,16 +167,92 @@ body {
   background: linear-gradient(to right, transparent, rgba(148,163,184,0.3), transparent);
 }
 
-@keyframes fade-slide {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.theme-light {
+  background: #f4f6f8;
+  color: #12161c;
 }
+
+.theme-light .subtitle {
+  color: #6b7280;
+}
+
+.theme-light .back-home {
+  color: #374151;
+}
+
+.theme-light .tech-card {
+  background: #fff;
+  border-color: rgba(100,116,139,0.25);
+}
+
+.theme-light .chip {
+  background: #fff;
+  border-color: rgba(148,163,184,0.35);
+  color: #12161c;
+}
+
+.theme-light .chip:hover {
+  background: #f1f5f9;
+}
+
+  @media (max-width: 575.98px) {
+    .title {
+      font-size: clamp(24px, 7vw, 34px);
+    }
+
+    .subtitle {
+      font-size: clamp(13px, 3.5vw, 15px);
+    }
+
+    .back-home {
+      font-size: clamp(13px, 3.5vw, 15px);
+      gap: 4px;
+    }
+
+    .tech-card {
+      padding: 1rem;
+    }
+
+    .tech-header {
+      font-size: clamp(13px, 3.5vw, 15px);
+      margin-bottom: 10px;
+    }
+
+    .chip {
+      padding: 5px 8px;
+      font-size: clamp(11px, 3vw, 13px);
+      margin: 2px;
+    }
+
+    .page-wrap {
+      max-width: 100%;
+      padding: 0 0.75rem;
+    }
+
+    .container {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .title {
+      font-size: clamp(20px, 6vw, 24px);
+    }
+
+    .tech-card {
+      padding: 0.75rem;
+    }
+
+    .tech-header {
+      font-size: clamp(12px, 3vw, 14px);
+    }
+
+    .chip {
+      padding: 4px 6px;
+      font-size: clamp(10px, 2.8vw, 12px);
+    }
+  }
 
 </style>
 </head>
