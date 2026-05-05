@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Certifications</title>
+<title>Jimin Panganiban | Certifications</title>
+<link rel="icon" type="png" href="assets/jimin-panganiban.png" />
 
 <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
-
-/* ===== LAYOUT ===== */
 html, body {
   height: 100%;
 }
@@ -61,7 +60,7 @@ body {
   margin-top: 5px;
 }
 
-/* ===== CARD ===== */
+/* card */
 .cert-card {
   background: #fff;
   border-radius: 12px;
@@ -93,11 +92,10 @@ body {
 }
 
 .cert-img-link:hover .cert-img {
-  transform: scale(1.02);
+  transform: scale(1.001);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.2);
 }
 
-/* TEXT */
 .cert-title {
   font-weight: 600;
   font-size: 15px;
@@ -108,7 +106,7 @@ body {
   color: #6b7280;
 }
 
-/* ===== FOOTER ===== */
+/* footer */
 .footer {
   text-align: center;
   font-size: 16px;
@@ -135,7 +133,7 @@ body {
   );
 }
 
-/* ===== DARK MODE ===== */
+/* dark mode */
 .theme-dark {
   background: #101317;
   color: #eef2f7;
@@ -288,7 +286,6 @@ body {
     font-size: clamp(10px, 2.8vw, 12px);
   }
 }
-
 </style>
 </head>
 
@@ -314,7 +311,7 @@ body {
 
 </div>
 
-<!-- FOOTER -->
+<!-- footer -->
 <div class="footer">
   © 2026 Jim Godwin Panganiban. All Rights Reserved.
 </div>
@@ -325,8 +322,15 @@ body {
 
 <script>
 
-/* ===== my certificates ===== */
+// Mga certs ko
 const certs = [
+  {
+    title: "Google AI Professional",
+    org: "Coursera - Google",
+    year: "2026",
+    img: "assets/certificates/google-ai.png",
+    link: "https://coursera.org/share/1b1b41e30d7487fb6f0956a4fc84ef58"
+  },
   {
     title: "Technical Support Fundamentals",
     org: "Coursera - Google",
@@ -346,27 +350,39 @@ const certs = [
     img: "assets/certificates/software-development-and-design-thinking.png"
   },
   {
-    title: "Web Development using MERN Stack",
-    org: "Department of Information Communication Technology",
+    title: "CSS Essentials",
+    org: "Cisco Networking Academy",
     year: "2025",
-    img: "assets/certificates/mern-stack.png"
+    img: "assets/certificates/css-essentials.png"
+  },
+  {
+    title: "HTML Essentials",
+    org: "Cisco Networking Academy",
+    year: "2025",
+    img: "assets/certificates/html-essentials.png"
   }
 ];
 
-/* ===== RENDER ===== */
+// render certs
 const container = document.getElementById("certContainer");
 
 certs.forEach(cert => {
   const col = document.createElement("div");
   col.className = "col-md-6";
 
+  // pag may link
+  const href = cert.link ? cert.link : "#";
+  const previewAttr = cert.link ? "" : `data-preview="${cert.img}"`;
+  const targetAttr = cert.link ? 'target="_blank"' : "";
+
   col.innerHTML = `
     <div class="cert-card">
-      <a href="#" class="cert-img-link" data-preview="${cert.img}">
+      <a href="${href}" class="cert-img-link" ${previewAttr} ${targetAttr}>
         <img src="${cert.img}" class="cert-img" alt="${cert.title}">
       </a>
       <div class="cert-title">${cert.title}</div>
-      <div class="cert-meta">${cert.org} • ${cert.year}</div>
+      <div class="cert-meta">${cert.org}</div>
+      <div class="cert-meta">${cert.year}</div>
     </div>
   `;
 
@@ -379,11 +395,15 @@ const imgModalContent = document.getElementById("imgModalContent");
 document.addEventListener("click", (event) => {
   const trigger = event.target.closest(".cert-img-link");
   if (trigger) {
-    event.preventDefault();
     const imageSrc = trigger.getAttribute("data-preview");
-    imgModalContent.src = imageSrc;
-    imgModal.classList.add("show");
-    return;
+    // Only show modal if there's a preview (no link)
+    if (imageSrc) {
+      event.preventDefault();
+      imgModalContent.src = imageSrc;
+      imgModal.classList.add("show");
+      return;
+    }
+    // Otherwise allow link to proceed normally
   }
 
   if (event.target === imgModal) {

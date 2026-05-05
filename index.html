@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Portfolio</title>
+<title>Jimin Panganiban | Information Technology</title>
 
 <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" type="png" href="assets/jimin-panganiban.png" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
@@ -67,12 +68,14 @@
     color: #9ca3af;
   }
 
-  /* DARK MODE TOGGLE BUTTON */
+  /* dark mode toggle */
   .theme-toggle-btn {
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    border: 2px solid rgba(148, 163, 184, 0.3);
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 12px;
+    border: 2px solid rgba(100, 109, 122, 0.3);
     background: rgba(148, 163, 184, 0.08);
     cursor: pointer;
     display: flex;
@@ -279,7 +282,7 @@
   .exp-company {
     font-size: 16px;
     opacity: 0.85;
-    margin-left: 21px;
+    margin-left: 10px;
   }
 
   .exp-year {
@@ -485,6 +488,26 @@
     }
   }
 
+  @media (max-width: 575.98px) {
+    .theme-toggle-btn {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      min-height: 48px;
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .theme-toggle-btn {
+      width: 46px;
+      height: 46px;
+      min-width: 46px;
+      min-height: 46px;
+      font-size: 20px;
+    }
+  }
+
   .cert-preview-link {
     display: block;
     cursor: zoom-in;
@@ -492,7 +515,7 @@
 
   .cert-preview {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 0.55rem;
@@ -667,8 +690,8 @@
       <div class="d-flex gap-4 align-items-center flex-wrap">
 
         <div class="profile-image-wrap">
-          <img src="assets/profile2.png" class="profile-img profile-img-default" alt="Profile image">
-          <img src="assets/profile-hover.png" class="profile-img profile-img-hover" alt="Profile image hover">
+          <img src="assets/jimin-panganiban.png" class="profile-img profile-img-default" alt="Profile image">
+          <img src="assets/jimin-panganiban2.png" class="profile-img profile-img-hover" alt="Profile image hover">
         </div>
 
         <div>
@@ -716,10 +739,12 @@
       <div class="card-box p-3 p-md-4 h-100">
         <h2 class="section-title">About me</h2>
         <p class="body-copy mb-3">
-          I’m an Aspiring IT Professional Graduated last July 2025. I'm currently working at LGU Calaca as Office Support Staff. Seeking for a challenging role in the IT industry to further develop my skills and knowledge.
+          I am an aspiring IT professional who graduated in July 2025, currently working as an Office Support Staff at the Local Government Unit of Calaca City. 
+          I am passionate about technology and committed to continuous learning, growth, and self-improvement in the field of Information Technology.
         </p>
         <p class="body-copy mb-0">
-          Currently, Seeking for an IT role that can provide hands-on experience and can train and help me to become successfull. Willing to learn, Can adapt quickly.
+          I am seeking an opportunity in the IT industry where I can gain hands-on experience, enhance my technical skills, and contribute to meaningful projects. 
+          I am highly adaptable, eager to learn, and motivated to build a successful career in the tech field.
         </p>
       </div>
     </div>
@@ -738,8 +763,8 @@
 
         <div class="d-flex justify-content-between align-items-start gap-3 mb-3">
           <div>
-            <div class="exp-role"> • Office Staff (Information Technology)</div>
-            <div class="exp-company">Batangas City Integrated High School</div>
+            <div class="exp-role"> • Administrative Support (IT)</div>
+            <div class="exp-company">Schools Division Office of Batangas City</div>
           </div>
           <div class="exp-year">Aug 2024 - Oct 2024</div>
         </div>
@@ -761,15 +786,18 @@
     <div class="col-12 col-lg-7">
       <div class="card-box p-3 p-md-4 h-100">
         <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
-          <h2 class="section-title mb-0">Tools/Software</h2>
+          <h2 class="section-title mb-0">Skills</h2>
           <a href="tools.html" class="view-all-link">View All <i class="bi bi-chevron-right"></i></a>
         </div>
-        <div class="tech-title fw-bold mt-3 mb-2">Frontend</div>
+        <div class="tech-title fw-bold mt-3 mb-2">Tools & Technologies</div>
         <div class="mb-0">
+          <span class="stack-chip">MS Office</span>
+          <span class="stack-chip">Canva</span>
           <span class="stack-chip">HTML</span>
           <span class="stack-chip">CSS</span>
           <span class="stack-chip">JavaScript</span>
-          <span class="stack-chip">Bootstrap</span>
+          <span class="stack-chip">PHP</span>
+          <span class="stack-chip">MySQL</span>
         </div>
       </div>
     </div>
@@ -782,25 +810,25 @@
         </div>
         <div class="cert-grid">
           <div class="cert-item">
+            <a href="#" class="cert-preview-link" data-preview="assets/certificates/google-ai.png">
+              <img src="assets/certificates/google-ai.png" class="cert-preview" alt="Google AI Professional certificate">
+            </a>
+            <div class="cert-title">Google AI Professional</div>
+            <div class="cert-meta mt-1">Google - Coursera • 2026</div>
+          </div>
+          <div class="cert-item">
+            <a href="#" class="cert-preview-link" data-preview="assets/certificates/technical-support-fundamentals.png">
+              <img src="assets/certificates/technical-support-fundamentals.png" class="cert-preview" alt="Technical Support Fundamentals certificate">
+            </a>
+            <div class="cert-title">Technical Support Fundamentals</div>
+            <div class="cert-meta mt-1">Google - Coursera • 2026</div>
+          </div>
+          <div class="cert-item">
             <a href="#" class="cert-preview-link" data-preview="assets/certificates/web-development-using-php-and-mysql.png">
               <img src="assets/certificates/web-development-using-php-and-mysql.png" class="cert-preview" alt="Web Development using PHP and MySQL certificate">
             </a>
             <div class="cert-title">Web Development Using PHP and MySQL</div>
-            <div class="cert-meta mt-1">Department of Information Technology and Communication | 2026</div>
-          </div>
-          <div class="cert-item">
-            <a href="#" class="cert-preview-link" data-preview="assets/certificates/software-development-and-design-thinking.png">
-              <img src="assets/certificates/software-development-and-design-thinking.png" class="cert-preview" alt="Software Development and Design Thinking certificate">
-            </a>
-            <div class="cert-title">Software Development & Design Thinking</div>
-            <div class="cert-meta mt-1">Department of Information Technology and Communication • 2025</div>
-          </div>
-          <div class="cert-item">
-            <a href="#" class="cert-preview-link" data-preview="assets/certificates/mern-stack.png">
-              <img src="assets/certificates/mern-stack.png" class="cert-preview" alt="Web Development using MERN Stack certificate">
-            </a>
-            <div class="cert-title">Web Development using MERN Stack</div>
-            <div class="cert-meta mt-1">Department of Information Technology and Communication • 2025</div>
+            <div class="cert-meta mt-1">Department of Information Technology and Communication • 2026</div>
           </div>
         </div>
       </div>
