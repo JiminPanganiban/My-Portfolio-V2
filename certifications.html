@@ -71,11 +71,10 @@ body {
 }
 
 .cert-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.02);
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
 }
 
-/* IMAGE */
 .cert-img-link {
   display: block;
   border-radius: 8px;
@@ -91,7 +90,7 @@ body {
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.cert-img-link:hover .cert-img {
+.cert-card:hover .cert-img {
   transform: scale(1.001);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.2);
 }
